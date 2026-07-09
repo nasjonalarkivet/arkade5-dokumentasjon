@@ -172,9 +172,9 @@ Validering av arkivformat
 Validering av om en valgt fil eller katalog har det valgte formatet blant følgende:
 
 * PDF/A
-	Validering av valgt PDF-fil, eller av PDF-filene i en valgt katalog. Validatoren kontrollerer om filene er PDF/A av en variant godkjent av Arkivverket (PDF/A-1A, -1B, -2A, -2B eller -2U). **NB! PDF/A-validering er deaktivert fra og med Arkade 2.12.5, i påvente av en løsning på et problem i et tredjepartsbibliotek.**
+	Validering av valgt PDF-fil, eller av PDF-filene i en valgt katalog. Validatoren kontrollerer om filene er PDF/A av en variant godkjent av Nasjonalarkivet (PDF/A-1A, -1B, -2A, -2B eller -2U). **NB! PDF/A-validering er deaktivert fra og med Arkade 2.12.5, i påvente av en løsning på et problem i et tredjepartsbibliotek.**
 * DIAS
-    Validering av en valgt SIP eller AIP som tar-fil eller katalog. Validatoren kontrollerer om informasjonspakken har en fil- og katalogstruktur som er iht. `spesifikasjonen for DIAS <https://www.arkivverket.no/forvaltning-og-utvikling/regelverk-og-standarder/dias-prosjektet-digital-arkivpakkestruktur>`_. (Filinnhold blir ikke kontrollert.) Enkelte spesielle avvik fra standarden blir akseptert av Arkivverket. Det framgår av valideringsresultatet om pakkens struktur er gyldig (uten mangler), ugyldig (mangelfull) eller akseptabel (har aksepterte mangler).
+    Validering av en valgt SIP eller AIP som tar-fil eller katalog. Validatoren kontrollerer om informasjonspakken har en fil- og katalogstruktur som er iht. `spesifikasjonen for DIAS <https://www.nasjonalarkivet.no/offentlig-forvaltning/regelverk-og-standarder/andre-arkivstandarder-dias/>`_. (Filinnhold blir ikke kontrollert.) Enkelte spesielle avvik fra standarden blir akseptert av Nasjonalarkivet. Det framgår av valideringsresultatet om pakkens struktur er gyldig (uten mangler), ugyldig (mangelfull) eller akseptabel (har aksepterte mangler).
 
 Generering av mal-fil for metadata
 ----------------------------------

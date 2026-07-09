@@ -19,7 +19,7 @@ In version 2.3.0, multilingual support was added to Arkade 5. These are the supp
 Source code
 ===========
 
-The source code is located at the GitHub-repository: https://github.com/arkivverket/arkade5/
+The source code is located at the GitHub-repository: https://github.com/nasjonalarkivet/arkade5/
 
 Arkade is developed with .NET and C#. As of version 2.13.0 the solution targets .NET 10.
 
