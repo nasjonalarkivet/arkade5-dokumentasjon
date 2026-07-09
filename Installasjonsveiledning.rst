@@ -9,17 +9,17 @@ Arkade 5
 Installer .NET
 ~~~~~~~~~~~~~~
 
-For å kjøre Arkade 5 må .NET 8 Desktop Runtime være installert:
+For å kjøre Arkade 5 må .NET 10 Desktop Runtime være installert:
 
    * Last ned |dotnet_desktop_x64_download_link| eller |dotnet_desktop_x86_download_link|
 
 .. |dotnet_desktop_x64_download_link| raw:: html
 
-   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-8.0.6-windows-x64-installer" target="_blank">.NET 8 Desktop Runtime  <b>x64</b></a>
+   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-10.0.9-windows-x64-installer" target="_blank">.NET 10 Desktop Runtime  <b>x64</b></a>
 
 .. |dotnet_desktop_x86_download_link| raw:: html
 
-   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-8.0.6-windows-x86-installer" target="_blank">.NET 8 Desktop Runtime <b>x86</b></a>
+   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-desktop-10.0.9-windows-x86-installer" target="_blank">.NET 10 Desktop Runtime <b>x86</b></a>
 
 
 Installer Arkade 5 
@@ -48,12 +48,27 @@ Aktiver støtte for validering av SIARD-2.1-filer
 
 For at Arkade skal støtte bruk av verktøyet |database_preservation_toolkit_link| for validering av Siard-filer må følgende instruksjoner utføres:
 
-* Installer Java Runtime Environment (`hjelp <Installasjonsveiledning.html#jre-info>`_)
+* Installer Java (`hjelp <Installasjonsveiledning.html#jre-info>`_)
 
-* Tilgjengeligjør DBPTK Developer for Arkade
+* Tilgjengeliggjør DBPTK Developer for Arkade
 
-	- Last ned :download:`dbptk-app-2.11.0.jar <https://github.com/keeps/dbptk-developer/releases/download/v2.11.0/dbptk-app-2.11.0.jar>`
+	- Last ned jar-filen for DBPTK-versjonen som passer med installert Java-versjon (se tabellen under): :download:`dbptk-app-4.4.0.jar <https://github.com/keeps/dbptk-developer/releases/download/v4.4.0/dbptk-app-4.4.0.jar>` eller :download:`dbptk-app-2.11.0.jar <https://github.com/keeps/dbptk-developer/releases/download/v2.11.0/dbptk-app-2.11.0.jar>`
 	- Lagre den nedlastede filen under :file:`<arkadeinstallasjonsmappe>/ThirdPartySoftware/DBPTK/`.
+
+Arkade støtter DBPTK Developer versjon 4.4.0 og 2.11.0. Hvilken DBPTK-versjon som kan brukes, avhenger av Java-versjonen:
+
++---------------------+---------------------------------------------------+
+| Java-versjon        | DBPTK-versjon                                     |
++=====================+===================================================+
+| Java 21 eller nyere | DBPTK 4.4.0 (anbefalt)                            |
++---------------------+---------------------------------------------------+
+| Java 8–16           | DBPTK 2.11.0                                      |
++---------------------+---------------------------------------------------+
+| Java 17–20          | Ikke kompatibel med noen av DBPTK-versjonene –    |
+|                     | oppgrader til Java 21 eller nyere                 |
++---------------------+---------------------------------------------------+
+
+Merk at Arkades støttede SIARD-versjon er 2.1, også når DBPTK 4.4.0 brukes.
 
 .. image:: img/dbptk_save_location.png
 
@@ -62,7 +77,7 @@ For at Arkade skal støtte bruk av verktøyet |database_preservation_toolkit_lin
    <a href="https://database-preservation.com/#developer" target="_blank">Database Preservation Toolkit Developer (DBPTK Developer)</a>
 
 .. note:: Unngå tegnsettproblematikk ved kjøring av DBPTK-jar-fil og Siard-uttrekksfil på Windows ved å velge filbaner for Arkade-installasjon og Arkades prosesseringsområde uten tegn som f.eks. :code:`æøå`
-	
+
 
 Kjør programmet
 ~~~~~~~~~~~~~~~
@@ -94,19 +109,19 @@ Arkade 5 CLI
 Installer .NET
 ~~~~~~~~~~~~~~
 
-For å kjøre Arkade 5 CLI må .NET 8 Runtime være installert.
+For å kjøre Arkade 5 CLI må .NET 10 Runtime være installert.
 
-Med Ubuntu/Debian kan .NET 8 Runtime installeres med følgende kommando:
-    
+Med Ubuntu/Debian kan .NET 10 Runtime installeres med følgende kommando:
+
 .. code-block:: bash
 
-	sudo apt-get install -y dotnet-runtime-8.0
+	sudo apt-get install -y dotnet-runtime-10.0
 
 * **Linux:** Se |dotnet_linux_instructions_link| for din Linux-distribusjon
 * **macOS:** Last ned |dotnet_macos_x64_download_link|
 * **Windows:** Last ned |dotnet_windows_x64_download_link| eller |dotnet_windows_x86_download_link|
 
-.NET 8 Runtime er inkludert i, og ikke nødvendig å installere i tillegg til, .NET 8 **Desktop** Runtime (som er krevet av Arkade 5 skrivebordsapplikasjon).
+.NET 10 Runtime er inkludert i, og ikke nødvendig å installere i tillegg til, .NET 10 **Desktop** Runtime (som er krevet av Arkade 5 skrivebordsapplikasjon).
 
 .. |dotnet_linux_instructions_link| raw:: html
 
@@ -114,15 +129,15 @@ Med Ubuntu/Debian kan .NET 8 Runtime installeres med følgende kommando:
 
 .. |dotnet_macos_x64_download_link| raw:: html
 
-   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-8.0.6-macos-x64-installer" target="_blank">.NET 8 Runtime <b>x64</b></a>
+   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-10.0.9-macos-x64-installer" target="_blank">.NET 10 Runtime <b>x64</b></a>
 
 .. |dotnet_windows_x64_download_link| raw:: html
 
-   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-8.0.6-windows-x64-installer" target="_blank">.NET 8 Runtime <b>x64</b></a>
+   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-10.0.9-windows-x64-installer" target="_blank">.NET 10 Runtime <b>x64</b></a>
 
 .. |dotnet_windows_x86_download_link| raw:: html
 
-   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-8.0.6-windows-x86-installer" target="_blank">.NET 8 Runtime <b>x86</b></a>
+   <a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-10.0.9-windows-x86-installer" target="_blank">.NET 10 Runtime <b>x86</b></a>
 
 
 Installer Arkade 5 CLI
@@ -193,19 +208,36 @@ Aktiver støtte for validering av SIARD-2.1-filer
 
 For at Arkade skal støtte bruk av verktøyet |database_preservation_toolkit_link| for validering av Siard-filer må følgende instruksjoner utføres:
 
-* Installer Java Runtime Environment (`hjelp <Installasjonsveiledning.html#jre-info>`_)
+* Installer Java (`hjelp <Installasjonsveiledning.html#jre-info>`_)
 
-* Tilgjengeligjør DBPTK Developer for Arkade
+* Tilgjengeliggjør DBPTK Developer for Arkade
 
-	- Last ned :download:`dbptk-app-2.11.0.jar <https://github.com/keeps/dbptk-developer/releases/download/v2.11.0/dbptk-app-2.11.0.jar>`
+	- Last ned jar-filen for DBPTK-versjonen som passer med installert Java-versjon (se tabellen under): :download:`dbptk-app-4.4.0.jar <https://github.com/keeps/dbptk-developer/releases/download/v4.4.0/dbptk-app-4.4.0.jar>` eller :download:`dbptk-app-2.11.0.jar <https://github.com/keeps/dbptk-developer/releases/download/v2.11.0/dbptk-app-2.11.0.jar>`
 	- Lagre den nedlastede filen under :file:`<arkadeinstallasjonsmappe>/ThirdPartySoftware/DBPTK/`.
+
+Arkade støtter DBPTK Developer versjon 4.4.0 og 2.11.0. Hvilken DBPTK-versjon som kan brukes, avhenger av Java-versjonen:
+
++---------------------+---------------------------------------------------+
+| Java-versjon        | DBPTK-versjon                                     |
++=====================+===================================================+
+| Java 21 eller nyere | DBPTK 4.4.0 (anbefalt)                            |
++---------------------+---------------------------------------------------+
+| Java 8–16           | DBPTK 2.11.0                                      |
++---------------------+---------------------------------------------------+
+| Java 17–20          | Ikke kompatibel med noen av DBPTK-versjonene –    |
+|                     | oppgrader til Java 21 eller nyere                 |
++---------------------+---------------------------------------------------+
+
+Merk at Arkades støttede SIARD-versjon er 2.1, også når DBPTK 4.4.0 brukes.
 
 .. image:: img/dbptk_save_location.png
 
 .. note:: Unngå tegnsettproblematikk ved kjøring av DBPTK-jar-fil og Siard-uttrekksfil på Windows ved å velge filbaner for Arkade-installasjon og Arkades prosesseringsområde uten tegn som f.eks. :code:`æøå`
 
-Aktiver støtte for validering av PDF/A 
+Aktiver støtte for validering av PDF/A
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important:: PDF/A-validering er deaktivert i Arkade fra og med versjon 2.12.5, i påvente av en løsning på et problem i et tredjepartsbibliotek. Instruksjonene under får derfor ingen virkning før PDF/A-valideringen blir reaktivert i en senere versjon.
 
 Linux/Mac
 ---------
@@ -238,12 +270,16 @@ Avinstaller Arkade 5 CLI
 
 
 
-.. tip:: Installer Java Runtime Environment
+.. tip:: Installer Java
 	:name: jre-info
-	
-	* Last ned installasjonsfil for JRE fra |java_download_link|
-	* Installer JRE ved å dobbeltklikke den nedlastede filen
 
+	* Last ned installasjonsfil for Java: |temurin_download_link| (Java 21 eller nyere, for DBPTK 4.4.0) eller |java_download_link| (Java 8, for DBPTK 2.11.0)
+	* Installer Java ved å dobbeltklikke den nedlastede filen
+
+
+.. |temurin_download_link| raw:: html
+
+   <a href="https://adoptium.net/temurin/releases/" target="_blank">https://adoptium.net</a>
 
 .. |java_download_link| raw:: html
 

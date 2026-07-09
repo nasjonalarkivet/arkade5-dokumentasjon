@@ -36,6 +36,8 @@ Velg og last inn arkivuttrekket som skal behandles:
 
 3) Klikk på knappen "Last inn uttrekk". Det valgte uttrekket vil lastes inn og åpnes i testvinduet.
 
+*En AIP/SIP (tar-fil) identifiseres ved innholdet i pakkens METS-fil (OBJID), ikke ved filnavnet – en omdøpt pakke kan derfor lastes inn og beholder sin korrekte identitet. En pakke uten gyldig identitet i METS kan også lastes inn; den vises da med «Ukjent identitet».*
+
 
 Testvinduet
 ~~~~~~~~~~~
@@ -45,7 +47,7 @@ Testvinduet
 Øverst i testvinduet vises:
 
 * Full filsti for det valgte uttrekket
-* En unik identifikator (UUID), generert for den gjeldende behandlingen av det valgte uttrekket
+* Identiteten til innlastet informasjonspakke («Informasjonspakke»), dersom uttrekket er en pakke (AIP/SIP). Identiteten (UUID) leses fra pakkens METS-fil. For en pakke uten gyldig identitet i METS vises «Ukjent identitet». Feltet vises ikke for uttrekk som ikke er en pakke (katalog eller .siard-fil)
 * Valgt arkivtype
 * Hvilken fil som under testing prosesseres i øyeblikket
 * Løpende informasjon om testkjøring*
@@ -65,7 +67,9 @@ Under testkjøring vil det, i den nedre delen av vinduet, vises meldinger om inn
 Testrapport
 -----------
 
-Etter fullført testing vil det genereres en rapport i formatene HTML, PDF/A-1b, XML og JSON. Klikk på knappen "Vis rapport" for å åpne HTML-versjonen i en nettleser eller eksportere en katalog med rapporten i alle formater.
+Etter fullført testing kan det genereres en testrapport i formatene HTML, PDF/A-1b, XML og JSON. Klikk på knappen "Vis rapport" for å åpne HTML-versjonen i en nettleser eller eksportere en katalog med rapporten i alle formater.
+
+Rapportfeltet «Tidspunkt for testing» viser dato og klokkeslett for når testingen ble fullført. Frittstående rapporter (eksportert utenom arkivpakke) navngis med pakkens identitet når uttrekket er en informasjonspakke, ellers med testtidspunktet.
 
 *(!) Ved opprettelse av arkivpakke inkluderes alltid testrapporten i alle formater.*
 
@@ -102,7 +106,7 @@ Dersom "Inkluder formatinformasjon for dokumentfiler", eller "Inkluder formatinf
 
 Når ønskede metadata er oppgitt, klikkes knappen "Opprett pakke". Dette åpner et dialogvindu for valg av pakkens plassering. Ved valgt plassering opprettes arkivpakken.
 
-Arkivpakken vil opprettes som en tar-fil og filnavnet vil være UUID-en som er generert for den gjeldende arkivbehandlingen: :file:`\{uuid\\\}.tar`. Pakken og tilhørende :file:`\{uuid\\\}.xml`-fil plasseres i en katalog :file:`Arkaderesultater-\{uuid\\\}`. Når alt er ferdig generert, vises denne katalogen på den valgte plasseringen.
+Arkivpakken vil opprettes som en tar-fil og filnavnet vil være pakkens UUID: :file:`\{uuid\\\}.tar`. Hver pakke som opprettes får sin egen, nyopprettede UUID – identiteten til et innlastet uttrekk gjenbrukes aldri i en ny pakke. Pakken og tilhørende :file:`\{uuid\\\}.xml`-fil plasseres i en katalog :file:`Arkaderesultater-\{uuid\\\}`. Når alt er ferdig generert, vises denne katalogen på den valgte plasseringen.
 
 **NB! Knappen "Ny kjøring" avslutter gjeldene arkivbehandling.**
 
@@ -168,7 +172,7 @@ Validering av arkivformat
 Validering av om en valgt fil eller katalog har det valgte formatet blant følgende:
 
 * PDF/A
-	Validering av valgt PDF-fil, eller av PDF-filene i en valgt katalog. Validatoren kontrollerer om filene er PDF/A av en variant godkjent av Arkivverket (PDF/A-1A, -1B, -2A, -2B eller -2U).
+	Validering av valgt PDF-fil, eller av PDF-filene i en valgt katalog. Validatoren kontrollerer om filene er PDF/A av en variant godkjent av Arkivverket (PDF/A-1A, -1B, -2A, -2B eller -2U). **NB! PDF/A-validering er deaktivert fra og med Arkade 2.12.5, i påvente av en løsning på et problem i et tredjepartsbibliotek.**
 * DIAS
     Validering av en valgt SIP eller AIP som tar-fil eller katalog. Validatoren kontrollerer om informasjonspakken har en fil- og katalogstruktur som er iht. `spesifikasjonen for DIAS <https://www.arkivverket.no/forvaltning-og-utvikling/regelverk-og-standarder/dias-prosjektet-digital-arkivpakkestruktur>`_. (Filinnhold blir ikke kontrollert.) Enkelte spesielle avvik fra standarden blir akseptert av Arkivverket. Det framgår av valideringsresultatet om pakkens struktur er gyldig (uten mangler), ugyldig (mangelfull) eller akseptabel (har aksepterte mangler).
 
@@ -382,7 +386,7 @@ Kommandoen under ufører PRONOM filformatanalyse på alt innhold i katalogen som
 Kommandoen validerer en katalog eller en fil oppgitt med parameteren :code:`--item`/:code:`-i` mot et gyldig arkivformat oppgitt med parameteren :code:`--format`/:code:`-f`. Resultatet vises på skjermen.
 
 Støttede formater
- * PDF/A
+ * PDF/A (**NB!** PDF/A-validering er deaktivert fra og med Arkade 2.12.5, i påvente av en løsning på et problem i et tredjepartsbibliotek)
  * DIAS
 
 Validering av en enkelt fil mot PDF/A-formatet:
@@ -423,4 +427,4 @@ Resulterende data
 
 .. image:: img/cli/generatedoutput.png
 
-*For hver prosessering genereres en unik UUID som bl.a. brukes i fil- og katalognavn for resultatene.*
+*For hver arkivpakke som opprettes genereres en ny, unik UUID som bl.a. brukes i fil- og katalognavn for resultatene. Testrapporter fra* :command:`test` *navngis med pakkens identitet når uttrekket er en informasjonspakke, ellers med testtidspunktet.*

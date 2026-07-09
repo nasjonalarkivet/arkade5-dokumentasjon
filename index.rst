@@ -20,6 +20,7 @@ Arkade vil etter hvert erstatte alle de testverktøy som Arkivverket har for å 
 * Fagsystemer
 * Noark-3
 * Noark 5 versjon 3.1, 4.0 og 5.0
+* SIARD versjon 2.1
 
 Arkade tester arkivuttrekk, produserer testrapporter og "pakker inn" data basert på gjeldende arkivstandarder for metadata. Testing av data baserer seg primært på Arkivverkets standard `ADDML <https://www.arkivverket.no/forvaltning-og-utvikling/regelverk-og-standarder/andre-arkivstandarder/addml-archival-data-description-markup-language>`_ for beskrivelse av datastrukturer. 
 
