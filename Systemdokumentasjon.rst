@@ -250,7 +250,7 @@ List of implemented Noark5 Tests:
 Third party software versions
 =============================
 
-Current version (2.13.0)
+Current version (2.13.1)
 ------------------------
 
 +---------------------------------+--------------------------------+
@@ -258,7 +258,7 @@ Current version (2.13.0)
 +=================================+================================+
 | Siegfried                       | 1.11.4 (PRONOM signature V122) |
 +---------------------------------+--------------------------------+
-| iText pdfhtml                   | 6.3.2                          |
+| iText pdfhtml                   | 6.3.3                          |
 +---------------------------------+--------------------------------+
 | Codeuctivity.PdfAValidator      | 3.0.208 (PDF/A validation      |
 | (veraPDF)                       | deactivated since 2.12.5)      |
