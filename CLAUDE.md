@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Sphinx documentation (in Norwegian, `nb_NO`) for Arkade 5, Arkivverket's test tool for
-archival extracts. Published at https://arkade.arkivverket.no via Read the Docs
-(configured in `.readthedocs.yaml`). There is no application code here — only
+Sphinx documentation (in Norwegian, `nb_NO`) for Arkade 5, Nasjonalarkivet's test tool
+for archival extracts. Published at https://docs.arkade.nasjonalarkivet.no via Read the
+Docs (configured in `.readthedocs.yaml`). There is no application code here — only
 reStructuredText sources.
 
 ## Structure
@@ -32,11 +32,22 @@ make clean       # remove _build
 ```
 
 `make.bat` provides the same targets on Windows. Requires `sphinx-build` with the
-dependencies in `requirements.txt` (`docutils`, `sphinx-rtd-theme`). Note: the checked-in
-`.venv/` was created on Windows (`Scripts/` layout) and does not work from WSL/Linux —
-create a fresh venv if needed.
+pinned dependencies in `requirements.txt` (`sphinx`, `sphinx-rtd-theme`, `docutils`).
+Note: the local, git-ignored `.venv/` was created on Windows (`Scripts/` layout) and
+does not work from WSL/Linux — create a fresh venv if needed.
 
 ## Git workflow
 
-`develop` is the working branch; `master` is the default branch used for PRs and what
-Read the Docs publishes from.
+`develop` is the working branch. `main` is the mainline: each Arkade release
+reaches it through a pull request from `develop` titled "Update documentation
+for Arkade 5 version X.Y.Z", merged with a merge commit (the only method the
+repository ruleset on `main` allows). The merge commit is tagged `X.Y.Z` (no
+`v` prefix), and new tags must be activated by hand in Read the Docs. Read the
+Docs builds `latest` from `main`.
+
+`master` is frozen. It is still GitHub's default branch because only
+Nasjonalarkivet's organization admins can change that, and their ruleset
+protects whichever branch is the default.
+
+Commits in a release carry the Jira key of the release-preparation issue
+(e.g. "Forberede utgivelse av Arkade X.Y.Z") as the message body.
