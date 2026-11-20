@@ -19,9 +19,9 @@ In version 2.3.0, multilingual support was added to Arkade 5. These are the supp
 Source code
 ===========
 
-The source code is located at the GitHub-repository: https://github.com/arkivverket/arkade5/
+The source code is located at the GitHub-repository: https://github.com/nasjonalarkivet/arkade5/
 
-Arkade is developed with .Net and C#. The solution-file (.sln) is compatible with Visual Studio 2015 and above. 
+Arkade is developed with .NET and C#. As of version 2.13.0 the solution targets .NET 10.
 
 Overview
 --------
@@ -40,7 +40,7 @@ Below is a brief description of each project in the solution.
 
 Arkivverket.Arkade.CLI
 -----------------------
-This project provides a cross-platform command line interface for the Arkade 5 software. It is built on the .NET Core framework, and based on the CommandLineParser and Serilog NuGet packages.
+This project provides a cross-platform command line interface for the Arkade 5 software. It is built on .NET, and based on the CommandLineParser and Serilog NuGet packages.
 
 Arkivverket.Arkade.CLI.Tests
 ----------------------------
@@ -97,15 +97,6 @@ The design and layout is based on Google's Material_ Design. This has been imple
 Arkivverket.Arkade.GUI.Installer
 --------------------------------
 This is the setup project for creating installation binaries. It is based on the `Wix-toolset <http://wixtoolset.org/>`_ which is included in the project as a NuGet package.
-
-Signing the installation file
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-In order to sign the msi file, you need the **signtool.exe** on your computer. This can be installed together with the Visual Studio. The ClickOnce Publishing package contains this tools.
-
-Signing of the installation file is done by the continuous integration server. Signing is performed with a certificate provided by Arkivverket. The following command is run to sign the installation file::
-
-    "C:\Program Files (x86)\Windows Kits\8.1\bin\x64\signtool.exe" sign /f PATH_TO_CERTIFICATE_FILE.pfx /p CERTIFICATE_PASSWORD src\Setup\bin\Release\Setup.msi
 
 Porting to other platforms
 --------------------------
@@ -259,8 +250,27 @@ List of implemented Noark5 Tests:
 Third party software versions
 =============================
 
-Current version (2.12.0)
+Current version (2.13.0)
 ------------------------
+
++---------------------------------+--------------------------------+
+| Software                        | Version                        |
++=================================+================================+
+| Siegfried                       | 1.11.4 (PRONOM signature V122) |
++---------------------------------+--------------------------------+
+| iText pdfhtml                   | 6.3.2                          |
++---------------------------------+--------------------------------+
+| Codeuctivity.PdfAValidator      | 3.0.208 (PDF/A validation      |
+| (veraPDF)                       | deactivated since 2.12.5)      |
++---------------------------------+--------------------------------+
+| DBPTK Developer (user-supplied) | 2.11.0 / 4.4.0                 |
++---------------------------------+--------------------------------+
+
+Previous versions
+-----------------
+
+Arkade 2.12.0
+^^^^^^^^^^^^^
 
 +-----------------+----------+
 | Software        | Version  |
@@ -271,9 +281,6 @@ Current version (2.12.0)
 +-----------------+----------+
 | veraPDF         |  1.24.1  |
 +-----------------+----------+
-
-Previous versions
------------------
 
 Arkade 2.10.0
 ^^^^^^^^^^^^^
