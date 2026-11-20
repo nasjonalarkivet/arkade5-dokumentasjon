@@ -250,7 +250,7 @@ List of implemented Noark5 Tests:
 Third party software versions
 =============================
 
-Current version (2.13.1)
+Current version (2.13.2)
 ------------------------
 
 +---------------------------------+--------------------------------+
